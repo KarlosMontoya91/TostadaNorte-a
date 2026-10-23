@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>La Tostada Norteña — Tostadas estilo Siberia en San Luis Potosí</title>
+  <meta name="description" content="Auténticas tostadas y tacos estilo Siberia en San Luis Potosí. Pollo deshebrado, guacamole cremoso y crema sobre tostada crujiente. Consulta precios, menú completo y haz tu pedido a domicilio.">
+  <link rel="canonical" href="https://latostadanortena.com/">
+  
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:type" content="restaurant.restaurant">
+  <meta property="og:title" content="La Tostada Norteña — Tostadas estilo Siberia en San Luis Potosí">
+  <meta property="og:description" content="Auténtico sabor norteño estilo Siberia: tostadas crujientes y tacos suaves con pollo deshebrado, crema y guacamole especial. Menú completo y pedidos a domicilio en SLP.">
+  <meta property="og:url" content="https://latostadanortena.com/">
+  <meta property="og:image" content="https://images.pexels.com/photos/12034617/pexels-photo-12034617.jpeg?auto=compress&cs=tinysrgb&w=1200">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Preconexión a fuentes tipográficas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo del sistema de diseño (design.md) -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/order.css">
+
+  <!-- Marcado estructurado Schema.org para Restaurante Local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Tostada Norteña",
+    "image": "https://images.pexels.com/photos/12034617/pexels-photo-12034617.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "url": "https://latostadanortena.com/",
+    "servesCuisine": "Estilo Siberia, Mexicana, Tostadas",
+    "priceRange": "$$",
+    "currenciesAccepted": "MXN",
+    "paymentAccepted": "Cash, Credit Card (TPV al repartidor), Transfer",
+    "hasMenu": "https://latostadanortena.com/#menu",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Luis Potosí",
+      "addressRegion": "SLP",
+      "addressCountry": "MX"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "20:00"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Enlace accesible de salto al contenido -->
+  <a href="#menu" class="skip-link">Saltar al catálogo de comida</a>
+
+  <!-- Banner de modo demostración y aviso de servicio -->
+  <aside class="demo-notice-bar" aria-label="Aviso de versión y pruebas">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;">
+      <div class="demo-notice-text">
+        <span class="demo-badge-pill">Vista previa V1</span>
+        <span>Rediseño público frontend · Datos y promociones reales observados el 22/10/2026</span>
+      </div>
+      <button type="button" id="demo-toggle-service" class="btn btn-secondary btn-sm" style="font-size:var(--text-xs);min-height:32px;padding:4px 10px;" aria-label="Alternar simulación de estado de servicio abierto o cerrado">
+        Probar estado servicio (Abierto / Cerrado)
+      </button>
+    </div>
+  </aside>
+
+  <!-- 1. Cabecera compacta crema -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="./" class="brand-link" aria-label="La Tostada Norteña — Ir al inicio">
+        <img src="assets/logo-tostada-nortena-verde.png" alt="Logotipo La Tostada Norteña - Estilo Siberia en San Luis Potosí" class="brand-logo-img" width="180" height="48">
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#menu" class="nav-link active">Menú</a>
+        <a href="#como-pedir" class="nav-link">Cómo pedir</a>
+        <a href="#ubicacion-horarios" class="nav-link">Ubicación y horarios</a>
+        <a href="#ayuda" class="nav-link">Ayuda</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="portal_empresas.php" class="empresas-link" rel="nofollow">Empresas</a>
+        <button type="button" class="header-cart-btn open-cart-dialog-btn" aria-haspopup="dialog" aria-label="Ver pedido actual. 0 productos.">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span>Pedido</span>
+          <span class="cart-count-badge" id="header-cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main id="main-content">
+
+    <!-- 2. Apertura editorial (Hero) -->
+    <section class="hero-section" aria-labelledby="hero-title-id">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content">
+            <span class="hero-tagline">
+              <span class="status-dot is-open" aria-hidden="true"></span>
+              Estilo Siberia · San Luis Potosí
+            </span>
+            <h1 class="hero-title" id="hero-title-id">Tostadas estilo Siberia, sabor norteño en SLP</h1>
+            <p class="hero-description">
+              Pollo deshebrado de primera, crema espesa y nuestra base cremosa de guacamole especial sobre tostada crujiente o tortilla suave de maíz. Receta tradicional norteña preparada al momento.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#menu" class="btn btn-primary">
+                Elegir mi pedido
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <div class="service-status-pill" role="status">
+                <span class="status-dot is-open" aria-hidden="true"></span>
+                <span class="service-status-text">Servicio abierto</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-media-wrapper">
+            <img 
+              src="https://images.pexels.com/photos/12034617/pexels-photo-12034617.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+              srcset="https://images.pexels.com/photos/12034617/pexels-photo-12034617.jpeg?auto=compress&cs=tinysrgb&w=600 600w, https://images.pexels.com/photos/12034617/pexels-photo-12034617.jpeg?auto=compress&cs=tinysrgb&w=1200 1200w"
+              sizes="(max-width: 768px) 100vw, 500px"
+              alt="Tostada tradicional mexicana con guacamole cremoso, pollo deshebrado y crema" 
+              class="hero-image" 
+              width="1200" 
+              height="960" 
+              loading="eager" 
+              fetchpriority="high"
+            >
+            <div class="hero-media-caption">
+              Fotografía ilustrativa de referencia · Tostada con guacamole, pollo y crema
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Franja de promoción activa -->
+    <section class="promo-strip-section" aria-label="Promociones vigentes">
+      <div class="container">
+        <div class="promo-strip">
+          <div>
+            <span class="promo-tag">Promoción</span>
+            <span class="promo-title">3 Tostadas Grandes por $255.00 MXN</span>
+            <span class="promo-details"> — $15.00 de descuento por cada tercia de Tostadas Siberia Grandes.</span>
+          </div>
+          <a href="#tostadas" class="btn btn-secondary btn-sm">Aprovechar en Tostadas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Menú completo con barra de navegación por categorías y pedido persistente -->
+    <section id="menu" class="menu-section" aria-labelledby="menu-heading-id">
+      
+      <!-- Barra fija de categorías -->
+      <nav class="category-nav-bar" aria-label="Categorías del menú">
+        <div class="container">
+          <ul class="category-nav-list" role="list">
+            <li><a href="#tostadas" class="category-pill active" aria-current="true">Tostadas</a></li>
+            <li><a href="#tacos" class="category-pill">Tacos Siberia</a></li>
+            <li><a href="#combos" class="category-pill">Combos completos</a></li>
+            <li><a href="#caldos" class="category-pill">Caldos y complementos</a></li>
+            <li><a href="#bebidas" class="category-pill">Bebidas</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h2 id="menu-heading-id" class="sr-only">Catálogo de platillos</h2>
+
+        <div class="menu-layout">
+          
+          <!-- Área de catálogo (70% en desktop) -->
+          <div class="catalog-area">
+
+            <!-- CATEGORÍA 1: TOSTADAS -->
+            <section id="tostadas" class="category-group" aria-labelledby="cat-title-tostadas">
+              <header class="category-header">
+                <h3 id="cat-title-tostadas" class="category-title">Tostadas Siberia</h3>
+                <span class="category-desc">Nuestra receta insignia en tostada crujiente</span>
+              </header>
+
+              <!-- Platillo destacado: Tostada Grande -->
+              <article class="product-featured-card" data-product-id="tostada-siberia-grande">
+                <div class="featured-media">
+                  <img 
+                    src="https://images.pexels.com/photos/12034617/pexels-photo-12034617.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                    alt="Tostada Siberia Grande con pollo deshebrado, guacamole y crema"
+                    loading="lazy" 
+                    width="600" 
+                    height="450"
+                  >
+                </div>
+                <div class="featured-content">
+                  <div class="product-header-row">
+                    <h4 class="product-name" style="font-size:var(--text-xl);">Tostada Siberia Grande (Gigante)</h4>
+                    <span class="product-price tabular-nums">$90.00 MXN</span>
+                  </div>
+                  <p class="product-desc">
+                    Imponente y crujiente tostada grande, servida con abundante pollo deshebrado de primera calidad, crema espesa norteña y nuestra base cremosa de guacamole especial.
+                  </p>
+                  <div class="combo-badge-list">
+                    <span class="combo-item-chip" style="background-color:var(--surface-alt);color:var(--brand);">Participa en promo 3 x $255</span>
+                    <span class="combo-item-chip">Porción grande tradicional</span>
+                  </div>
+                  <div class="product-footer-row">
+                    <span class="form-hint">Disponibilidad en cocina: Lista</span>
+                    <button type="button" class="btn btn-primary add-to-cart-btn" data-product-id="tostada-siberia-grande" aria-label="Agregar Tostada Siberia Grande de $90.00 MXN al pedido">
+                      Agregar al pedido
+                    </button>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Fila editorial: Tostada JR -->
+              <article class="product-card" data-product-id="tostada-siberia-jr">
+                <div class="product-info">
+                  <div class="product-header-row">
+                    <h4 class="product-name">Tostada JR Siberia</h4>
+                    <span class="product-price tabular-nums">$75.00 MXN</span>
+                  </div>
+                  <p class="product-desc">
+                    La receta tradicional de la casa y el mismo sabor inigualable norteño de la tostada en un tamaño compacto JR, ideal para antojo o acompañar.
+                  </p>
+                </div>
+                <div class="product-footer-row">
+                  <span class="form-hint">Porción individual JR</span>
+                  <button type="button" class="btn btn-secondary add-to-cart-btn" data-product-id="tostada-siberia-jr" aria-label="Agregar Tostada JR Siberia de $75.00 MXN al pedido">
+                    Agregar al pedido
+                  </button>
+                </div>
+              </article>
+            </section>
+
+            <!-- CATEGORÍA 2: TACOS SIBERIA -->
+            <section id="tacos" class="category-group" aria-labelledby="cat-title-tacos">
+              <header class="category-header">
+                <h3 id="cat-title-tacos" class="category-title">Tacos Siberia</h3>
+                <span class="category-desc">Preparados sobre tortilla suave de maíz de primera</span>
+              </header>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:var(--space-20);">
+                <!-- Taco Especial -->
+                <article class="product-card" data-product-id="taco-especial-siberia">
+                  <div class="product-info">
+                    <div class="product-header-row">
+                      <h4 class="product-name">Taco Especial Siberia</h4>
+                      <span class="product-price tabular-nums">$65.00 MXN</span>
+                    </div>
+                    <p class="product-desc">
+                      Delicioso taco de tamaño generoso con pollo deshebrado de primera, crema espesa y nuestra base cremosa de guacamole especial sobre tortilla suave perfecta.
+                    </p>
+                  </div>
+                  <div class="product-footer-row">
+                    <span class="form-hint">Tortilla suave grande</span>
+                    <button type="button" class="btn btn-secondary add-to-cart-btn" data-product-id="taco-especial-siberia" aria-label="Agregar Taco Especial Siberia de $65.00 MXN al pedido">
+                      Agregar
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Taco JR -->
+                <article class="product-card" data-product-id="taco-jr-siberia">
+                  <div class="product-info">
+                    <div class="product-header-row">
+                      <h4 class="product-name">Taco JR Siberia</h4>
+                      <span class="product-price tabular-nums">$55.00 MXN</span>
+                    </div>
+                    <p class="product-desc">
+                      Porción individual ligera con pollo deshebrado fresco, crema y guacamole cremoso sobre tortilla suave de maíz.
+                    </p>
+                  </div>
+                  <div class="product-footer-row">
+                    <span class="form-hint">Porción compacta JR</span>
+                    <button type="button" class="btn btn-secondary add-to-cart-btn" data-product-id="taco-jr-siberia" aria-label="Agregar Taco JR Siberia de $55.00 MXN al pedido">
+                      Agregar
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <!-- CATEGORÍA 3: COMBOS COMPLETOS -->
+            <section id="combos" class="category-group" aria-labelledby="cat-title-combos">
+              <header class="category-header">
+                <h3 id="cat-title-combos" class="category-title">Combos completos</h3>
+                <span class="category-desc">Tu platillo favorito acompañado de consomé caliente y bebida</span>
+              </header>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:var(--space-20);">
+                <!-- Combo Tostada Especial -->
+                <article class="product-card" data-product-id="combo-tostada-especial">
+                  <div class="product-info">
+                    <div class="product-header-row">
+                      <h4 class="product-name">Combo Tostada Especial</h4>
+                      <span class="product-price tabular-nums">$105.00 MXN</span>
+                    </div>
+                    <p class="product-desc">
+                      Nuestra clásica tostada gigante de pollo deshebrado con guacamole y crema, acompañada de un consomé caliente con verduras y un refresco frío.
+                    </p>
+                    <div class="combo-badge-list">
+                      <span class="combo-item-chip">1 Tostada Gigante</span>
+                      <span class="combo-item-chip">Consomé con verduras</span>
+                      <span class="combo-item-chip">Refresco o agua</span>
+                    </div>
+                  </div>
+                  <div class="product-footer-row">
+                    <span class="form-hint">Paquete completo</span>
+                    <button type="button" class="btn btn-primary add-to-cart-btn" data-product-id="combo-tostada-especial" aria-label="Agregar Combo Tostada Especial de $105.00 MXN al pedido">
+                      Agregar
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Combo Tostada JR -->
+                <article class="product-card" data-product-id="combo-tostada-jr">
+                  <div class="product-info">
+                    <div class="product-header-row">
+                      <h4 class="product-name">Combo Tostada JR</h4>
+                      <span class="product-price tabular-nums">$90.00 MXN</span>
+                    </div>
+                    <p class="product-desc">
+                      Una versión ligera que incluye una tostada clásica de pollo en porción JR, consomé chico con verduras y bebida fría.
+                    </p>
+                    <div class="combo-badge-list">
+                      <span class="combo-item-chip">1 Tostada JR</span>
+                      <span class="combo-item-chip">Consomé chico</span>
+                      <span class="combo-item-chip">Refresco o agua</span>
+                    </div>
+                  </div>
+                  <div class="product-footer-row">
+                    <span class="form-hint">Paquete JR</span>
+                    <button type="button" class="btn btn-secondary add-to-cart-btn" data-product-id="combo-tostada-jr" aria-label="Agregar Combo Tostada JR de $90.00 MXN al pedido">
+                      Agregar
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Combo Taco Especial -->
+                <article class="product-card" data-product-id="combo-taco-especial">
+                  <div class="product-info">
+                    <div class="product-header-row">
+                      <h4 class="product-name">Combo Taco Especial</h4>
+                      <span class="product-price tabular-nums">$85.00 MXN</span>
+                    </div>
+                    <p class="product-desc">
+                      Taco grande especial Siberia con guacamole y crema, consomé caliente con verduras y bebida fría a elección.
+                    </p>
+                    <div class="combo-badge-list">
+                      <span class="combo-item-chip">1 Taco Especial</span>
+                      <span class="combo-item-chip">Consomé con verduras</span>
+                      <span class="combo-item-chip">Refresco o agua</span>
+                    </div>
+                  </div>
+                  <div class="product-footer-row">
+                    <span class="form-hint">Paquete completo</span>
+                    <button type="button" class="btn btn-secondary add-to-cart-btn" data-product-id="combo-taco-especial" aria-label="Agregar Combo Taco Especial de $85.00 MXN al pedido">
+                      Agregar
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Combo Taco JR -->
+                <article class="product-card" data-product-id="combo-taco-jr">
+                  <div class="product-info">
+                    <div class="product-header-row">
+                      <h4 class="product-name">Combo Taco JR</h4>
+                      <span class="product-price tabular-nums">$75.00 MXN</span>
+                    </div>
+                    <p class="product-desc">
+                      Taco individual JR de pollo deshebrado acompañado de consomé chico sazonado con verduras y refresco o agua.
+                    </p>
+                    <div class="combo-badge-list">
+                      <span class="combo-item-chip">1 Taco JR</span>
+                      <span class="combo-item-chip">Consomé chico</span>
+                      <span class="combo-item-chip">Refresco o agua</span>
+                    </div>
+                  </div>
+                  <div class="product-footer-row">
+                    <span class="form-hint">Paquete ligero</span>
+                    <button type="button" class="btn btn-secondary add-to-cart-btn" data-product-id="combo-taco-jr" aria-label="Agregar Combo Taco JR de $75.00 MXN al pedido">
+                      Agregar
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <!-- CATEGORÍA 4: CALDOS Y COMPLEMENTOS -->
+            <section id="caldos" class="category-group" aria-labelledby="cat-title-caldos">
+              <header class="category-header">
+                <h3 id="cat-title-caldos" class="category-title">Caldos y complementos</h3>
+                <span class="category-desc">Sopas caseras sazonadas con el toque norteño</span>
+              </header>
+
+              <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:var(--space-20);">
+                <!-- Consomé -->
+                <article class="product-card" data-product-id="consome">
+                  <div class="product-info">
+                    <div class="product-header-row">
+                      <h4 class="product-name">Consomé</h4>
+                      <span class="product-price tabular-nums">$35.00 MXN</span>
+                    </div>
+                    <p class="product-desc">
+                      Caldo caliente de pollo sazonado con verduras frescas (zanahoria, papa) y hierbas finas. El acompañamiento ideal.
+                    </p>
+                  </div>
+                  <div class="product-footer-row">
+                    <span class="form-hint">Tazón caliente</span>
+                    <button type="button" class="btn btn-secondary add-to-cart-btn" data-product-id="consome" aria-label="Agregar Consomé de $35.00 MXN al pedido">
+                      Agregar
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Caldo de Pollo -->
+                <article class="product-card" data-product-id="caldo-pollo">
+                  <div class="product-info">
+                    <div class="product-header-row">
+                      <h4 class="product-name">Caldo de Pollo</h4>
+                      <span class="product-price tabular-nums">$45.00 MXN</span>
+                    </div>
+                    <p class="product-desc">
+                      Tazón generoso de caldo caliente con tiernas tiras de pollo deshebrado y verduras seleccionadas.
+                    </p>
+                  </div>
+                  <div class="product-footer-row">
+                    <span class="form-hint">Tazón con pollo</span>
+                    <button type="button" class="btn btn-secondary add-to-cart-btn" data-product-id="caldo-pollo" aria-label="Agregar Caldo de Pollo de $45.00 MXN al pedido">
+                      Agregar
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <!-- CATEGORÍA 5: BEBIDAS -->
+            <section id="bebidas" class="category-group" aria-labelledby="cat-title-bebidas">
+              <header class="category-header">
+                <h3 id="cat-title-bebidas" class="category-title">Bebidas</h3>
+                <span class="category-desc">Refrescos embotellados fríos</span>
+              </header>
+
+              <article class="product-card" data-product-id="coca-cola-500">
+                <div class="product-info">
+                  <div class="product-header-row">
+                    <h4 class="product-name">Coca Cola 500 ml</h4>
+                    <span class="product-price tabular-nums">$27.00 MXN</span>
+                  </div>
+                  <p class="product-desc">
+                    Refresco embotellado de 500 ml servido bien frío.
+                  </p>
+                </div>
+                <div class="product-footer-row">
+                  <span class="form-hint">Botella pet 500 ml</span>
+                  <button type="button" class="btn btn-secondary add-to-cart-btn" data-product-id="coca-cola-500" aria-label="Agregar Coca Cola 500 ml de $27.00 MXN al pedido">
+                    Agregar
+                  </button>
+                </div>
+              </article>
+            </section>
+
+          </div>
+
+          <!-- Barra lateral persistente de Pedido en Desktop (≥1100px) -->
+          <aside class="order-sidebar-sticky" aria-label="Resumen de pedido en computadora">
+            <div class="order-panel" id="desktop-order-panel">
+              <div class="order-panel-header">
+                <h3 class="order-panel-title">Tu Pedido</h3>
+                <span class="cart-count-badge">0</span>
+              </div>
+
+              <!-- Estado vacío -->
+              <div class="cart-empty-state" id="desktop-cart-empty">
+                <div class="cart-empty-icon" aria-hidden="true">🛒</div>
+                <div class="cart-empty-title">El carrito está vacío</div>
+                <p class="cart-empty-desc">Explora el menú y agrega tus tostadas, tacos o combos favoritos.</p>
+              </div>
+
+              <!-- Lista de productos -->
+              <div id="desktop-cart-content" style="display:none;">
+                <ul class="order-items-list" id="desktop-order-items" role="list" aria-label="Productos en el pedido"></ul>
+
+                <!-- Desglose de costos -->
+                <div class="order-cost-breakdown" id="desktop-cost-breakdown">
+                  <div class="cost-row">
+                    <span>Subtotal:</span>
+                    <span class="summary-subtotal tabular-nums">$0.00</span>
+                  </div>
+                  <div class="cost-row discount-row summary-discount-row" style="display:none;">
+                    <span>Descuento aplicado:</span>
+                    <span class="summary-discount tabular-nums">-$0.00</span>
+                  </div>
+                  <div class="cost-row delivery-row">
+                    <span>Envío:</span>
+                    <span class="summary-delivery tabular-nums">Por calcular</span>
+                  </div>
+                  <div class="delivery-status-note summary-delivery-note">
+                    Selecciona tu distancia abajo para cotizar el costo exacto de entrega.
+                  </div>
+                  <div class="cost-row total-row">
+                    <span>Total a pagar:</span>
+                    <span class="summary-total tabular-nums">$0.00</span>
+                  </div>
+                </div>
+
+                <!-- Formulario de entrega y checkout en desktop -->
+                <form id="desktop-checkout-form" class="checkout-section">
+                  <div class="checkout-step-title">
+                    <span>Datos de entrega</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="desktop-customer-name" class="form-label">
+                      Nombre de quien recibe
+                    </label>
+                    <input type="text" id="desktop-customer-name" name="customer-name" class="form-input" placeholder="Nombre completo" required autocomplete="name">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="desktop-customer-phone" class="form-label">
+                      Teléfono de contacto
+                    </label>
+                    <input type="tel" id="desktop-customer-phone" name="customer-phone" class="form-input" placeholder="10 dígitos (ej. 4441234567)" required autocomplete="tel">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="desktop-customer-address" class="form-label">
+                      Calle y número
+                    </label>
+                    <input type="text" id="desktop-customer-address" name="customer-address" class="form-input" placeholder="Calle, número exterior e interior" required autocomplete="street-address">
+                  </div>
+
+                  <!-- Selector accesible de distancia y entrega -->
+                  <div class="form-group">
+                    <label class="form-label">
+                      Distancia estimada de entrega
+                    </label>
+                    <div class="distance-selector-buttons" role="group" aria-label="Selecciona la distancia estimada a tu domicilio">
+                      <button type="button" class="distance-btn" data-km="1.0">Hasta 1 km ($15)</button>
+                      <button type="button" class="distance-btn" data-km="2.0">Hasta 2 km ($23)</button>
+                      <button type="button" class="distance-btn" data-km="3.0">Hasta 3 km ($31)</button>
+                      <button type="button" class="distance-btn" data-km="4.0">Hasta 4 km ($39)</button>
+                      <button type="button" class="distance-btn" data-km="6.0">Extensión 6 km (&gt;$1,000)</button>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm use-gps-btn" style="margin-top:6px;width:100%;">
+                      📍 Usar mi ubicación actual (GPS opcional)
+                    </button>
+                  </div>
+
+                  <!-- Método de pago -->
+                  <div class="form-group">
+                    <label class="form-label">Método de pago al recibir</label>
+                    <div class="payment-methods-group">
+                      <label class="payment-radio-label">
+                        <input type="radio" name="payment-method" value="efectivo" checked>
+                        <span>Efectivo al repartidor</span>
+                      </label>
+                      <label class="payment-radio-label">
+                        <input type="radio" name="payment-method" value="tpv">
+                        <span>Terminal TPV al repartidor (Tarjeta)</span>
+                      </label>
+                      <label class="payment-radio-label">
+                        <input type="radio" name="payment-method" value="transferencia">
+                        <span>Transferencia bancaria previa</span>
+                      </label>
+                    </div>
+
+                    <div class="cash-amount-group" style="margin-top:8px;">
+                      <label for="desktop-cash-amount" class="form-label" style="font-size:var(--text-xs);">
+                        ¿Con cuánto pagarás? <span class="form-label-optional">(Para llevar cambio)</span>
+                      </label>
+                      <input type="text" id="desktop-cash-amount" name="cash-amount" class="form-input" placeholder="Ej. $200 o $500">
+                    </div>
+                  </div>
+
+                  <button type="submit" id="desktop-submit-btn" class="btn btn-primary" style="width:100%;margin-top:8px;">
+                    Revisar y enviar pedido a caja
+                  </button>
+                  <p class="form-hint" style="text-align:center;">
+                    Tus datos se usan únicamente para coordinar la entrega de este pedido.
+                  </p>
+                </form>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Franja explicativa de cómo pedir -->
+    <section id="como-pedir" class="info-section alt-bg" aria-labelledby="como-pedir-heading">
+      <div class="container">
+        <h2 id="como-pedir-heading" style="text-align:center;">Cómo funciona tu pedido</h2>
+        <p style="text-align:center;margin:0 auto var(--space-32);color:var(--muted);">
+          Sin complicaciones: servicio directo a domicilio en San Luis Potosí.
+        </p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <h3 style="font-size:var(--text-lg);">Elige tus platillos</h3>
+            <p style="font-size:var(--text-sm);color:var(--ink);">
+              Selecciona tus tostadas, tacos Siberia o combos completos. Si pides 3 tostadas grandes, tu descuento se aplicará automáticamente.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <h3 style="font-size:var(--text-lg);">Revisa tu entrega</h3>
+            <p style="font-size:var(--text-sm);color:var(--ink);">
+              Indica tu dirección y calcula el costo de envío transparente ($15 hasta 1 km y +$8 por km extra). Cobertura base de 4 km y hasta 9 km en pedidos mayores a $1,000.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <h3 style="font-size:var(--text-lg);">Envío a caja y pago al recibir</h3>
+            <p style="font-size:var(--text-sm);color:var(--ink);">
+              Envía tu orden a caja. Paga en efectivo al repartidor (llevamos tu cambio), con tarjeta en terminal física TPV o mediante transferencia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Información local, horarios y cobertura -->
+    <section id="ubicacion-horarios" class="info-section" aria-labelledby="ubicacion-heading">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:var(--space-48);">
+          <div>
+            <h2 id="ubicacion-heading">Horarios y cobertura</h2>
+            <p style="margin:var(--space-16) 0;color:var(--ink);">
+              Estamos listos para llevar el auténtico sabor norteño estilo Siberia directo a tu mesa en San Luis Potosí.
+            </p>
+
+            <div style="background-color:var(--surface);padding:var(--space-20);border-radius:var(--radius-lg);border:1px solid var(--line);display:flex;flex-direction:column;gap:var(--space-12);">
+              <div>
+                <strong style="color:var(--brand);display:block;">Horario de atención:</strong>
+                <span>Lunes a Domingo: 11:00 a 20:00 hrs</span>
+              </div>
+              <div>
+                <strong style="color:var(--brand);display:block;">Tarifa de entrega:</strong>
+                <span>$15.00 MXN en el primer kilómetro; +$8.00 MXN por cada km adicional.</span>
+              </div>
+              <div>
+                <strong style="color:var(--brand);display:block;">Cobertura de reparto:</strong>
+                <span>Radio estándar de hasta 4 km. Extensión de hasta 9 km disponible para pedidos desde $1,000.00 MXN sujeta a cotización de ruta.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preguntas frecuentes / Ayuda -->
+          <div id="ayuda">
+            <h2>Ayuda y preguntas frecuentes</h2>
+            <div style="display:flex;flex-direction:column;gap:var(--space-16);margin-top:var(--space-16);">
+              <details style="background:var(--surface);padding:14px;border-radius:var(--radius-md);border:1px solid var(--line);">
+                <summary style="font-weight:600;cursor:pointer;color:var(--brand);">¿Qué incluye el estilo Siberia?</summary>
+                <p style="margin-top:8px;font-size:var(--text-sm);color:var(--ink);">
+                  Es la receta clásica originaria de Monterrey: pechuga de pollo deshebrada, guacamole cremoso fresco y crema espesa sobre tostada de maíz dorada o tortilla suave.
+                </p>
+              </details>
+
+              <details style="background:var(--surface);padding:14px;border-radius:var(--radius-md);border:1px solid var(--line);">
+                <summary style="font-weight:600;cursor:pointer;color:var(--brand);">¿Puedo pagar con tarjeta bancaria?</summary>
+                <p style="margin-top:8px;font-size:var(--text-sm);color:var(--ink);">
+                  Sí. Nuestro repartidor lleva terminal física TPV inalámbrica para cobrar tarjetas de débito o crédito en tu puerta sin ingresar tus datos bancarios en internet.
+                </p>
+              </details>
+
+              <details style="background:var(--surface);padding:14px;border-radius:var(--radius-md);border:1px solid var(--line);">
+                <summary style="font-weight:600;cursor:pointer;color:var(--brand);">¿Cómo funciona la promoción de 3 tostadas?</summary>
+                <p style="margin-top:8px;font-size:var(--text-sm);color:var(--ink);">
+                  Al agregar 3 piezas de Tostada Siberia Grande a tu carrito, el sistema descuenta automáticamente $15 MXN del total (precio regular $270, pagas $255).
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Barra móvil inferior persistente ("Ver pedido") -->
+  <aside class="mobile-cart-bar" aria-label="Acceso rápido al pedido">
+    <div>
+      <div style="font-size:var(--text-xs);color:var(--muted);font-weight:600;">SUBTOTAL</div>
+      <div id="mobile-cart-subtotal" class="price-tag" style="font-size:var(--text-lg);font-weight:700;color:var(--brand);">$0.00</div>
+    </div>
+    <button type="button" class="btn btn-primary open-cart-dialog-btn" aria-haspopup="dialog" aria-label="Abrir pedido. 0 productos.">
+      <span>Ver pedido</span>
+      <span class="cart-count-badge" id="mobile-cart-count">0</span>
+    </button>
+  </aside>
+
+  <!-- Pie de página con enlaces accesibles y privacidad -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo-tostada-nortena-crema.png" alt="La Tostada Norteña" class="footer-logo-img" width="180" height="48">
+          <p style="font-size:var(--text-sm);line-height:1.6;color:#DED6C5;">
+            Auténticas tostadas y tacos estilo Siberia en San Luis Potosí. Calidad norteña, ingredientes frescos y entrega a domicilio con atención personalizada.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navegación</h4>
+          <ul class="footer-links-list" role="list">
+            <li><a href="#menu" class="footer-link">Catálogo completo</a></li>
+            <li><a href="#como-pedir" class="footer-link">Cómo funciona el pedido</a></li>
+            <li><a href="#ubicacion-horarios" class="footer-link">Horarios y cobertura</a></li>
+            <li><a href="#ayuda" class="footer-link">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Legal y empresas</h4>
+          <ul class="footer-links-list" role="list">
+            <li><a href="portal_empresas.php" class="footer-link" rel="nofollow">Portal Empresas Preferentes</a></li>
+            <li><a href="#privacidad" id="open-privacy-btn" class="footer-link">Aviso de Privacidad</a></li>
+            <li><a href="#preferencias-cookies" id="open-cookie-settings-btn" class="footer-link">Preferencias de privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 La Tostada Norteña. San Luis Potosí, S.L.P., México. Todos los derechos reservados.</div>
+        <div>Rediseño funcional v1.0 · WCAG 2.2 AA Compliance Target</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DIÁLOGO MODAL: CARRITO Y CHECKOUT MÓVIL (NATIVO HTML5) -->
+  <dialog id="cart-modal" class="accessible-dialog" aria-labelledby="cart-modal-title">
+    <div class="dialog-header">
+      <h3 id="cart-modal-title" class="dialog-title">Tu Pedido</h3>
+      <button type="button" id="close-cart-dialog" class="dialog-close-btn" aria-label="Cerrar pedido">✕</button>
+    </div>
+
+    <div class="dialog-body">
+      <!-- Estado vacío -->
+      <div class="cart-empty-state" id="modal-cart-empty">
+        <div class="cart-empty-icon" aria-hidden="true">🛒</div>
+        <div class="cart-empty-title">El carrito está vacío</div>
+        <p class="cart-empty-desc">Agrega tus platillos desde el menú para revisar tu entrega.</p>
+      </div>
+
+      <!-- Contenido del pedido -->
+      <div id="modal-cart-content" style="display:none;">
+        <ul class="order-items-list" id="modal-order-items" role="list" aria-label="Productos en el pedido"></ul>
+
+        <!-- Desglose de costos -->
+        <div class="order-cost-breakdown" id="modal-cost-breakdown">
+          <div class="cost-row">
+            <span>Subtotal:</span>
+            <span class="summary-subtotal tabular-nums">$0.00</span>
+          </div>
+          <div class="cost-row discount-row summary-discount-row" style="display:none;">
+            <span>Descuento aplicado:</span>
+            <span class="summary-discount tabular-nums">-$0.00</span>
+          </div>
+          <div class="cost-row delivery-row">
+            <span>Envío:</span>
+            <span class="summary-delivery tabular-nums">Por calcular</span>
+          </div>
+          <div class="delivery-status-note summary-delivery-note">
+            Selecciona tu distancia abajo para cotizar el costo exacto de entrega.
+          </div>
+          <div class="cost-row total-row">
+            <span>Total a pagar:</span>
+            <span class="summary-total tabular-nums">$0.00</span>
+          </div>
+        </div>
+
+        <!-- Formulario móvil -->
+        <form id="modal-checkout-form" class="checkout-section">
+          <div class="checkout-step-title">
+            <span>Datos de entrega</span>
+          </div>
+
+          <div class="form-group">
+            <label for="modal-customer-name" class="form-label">Nombre de quien recibe</label>
+            <input type="text" id="modal-customer-name" name="customer-name" class="form-input" placeholder="Nombre completo" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="modal-customer-phone" class="form-label">Teléfono de contacto</label>
+            <input type="tel" id="modal-customer-phone" name="customer-phone" class="form-input" placeholder="10 dígitos (ej. 4441234567)" required autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label for="modal-customer-address" class="form-label">Calle y número</label>
+            <input type="text" id="modal-customer-address" name="customer-address" class="form-input" placeholder="Calle, número exterior e interior" required autocomplete="street-address">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Distancia estimada de entrega</label>
+            <div class="distance-selector-buttons" role="group" aria-label="Distancia estimada">
+              <button type="button" class="distance-btn" data-km="1.0">Hasta 1 km ($15)</button>
+              <button type="button" class="distance-btn" data-km="2.0">Hasta 2 km ($23)</button>
+              <button type="button" class="distance-btn" data-km="3.0">Hasta 3 km ($31)</button>
+              <button type="button" class="distance-btn" data-km="4.0">Hasta 4 km ($39)</button>
+              <button type="button" class="distance-btn" data-km="6.0">Extensión 6 km (&gt;$1,000)</button>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm use-gps-btn" style="margin-top:6px;width:100%;">
+              📍 Usar mi ubicación actual (GPS opcional)
+            </button>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Método de pago al recibir</label>
+            <div class="payment-methods-group">
+              <label class="payment-radio-label">
+                <input type="radio" name="payment-method" value="efectivo" checked>
+                <span>Efectivo al repartidor</span>
+              </label>
+              <label class="payment-radio-label">
+                <input type="radio" name="payment-method" value="tpv">
+                <span>Terminal TPV al repartidor (Tarjeta)</span>
+              </label>
+              <label class="payment-radio-label">
+                <input type="radio" name="payment-method" value="transferencia">
+                <span>Transferencia previa</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" id="modal-submit-btn" class="btn btn-primary" style="width:100%;margin-top:8px;">
+            Revisar y enviar pedido a caja
+          </button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DIÁLOGO MODAL: CONFIRMACIÓN Y TICKET DE DEMOSTRACIÓN -->
+  <dialog id="order-confirmation-modal" class="accessible-dialog" aria-labelledby="confirmation-modal-title">
+    <div class="dialog-header">
+      <h3 id="confirmation-modal-title" class="dialog-title">Revisión de Pedido a Caja</h3>
+      <button type="button" id="close-confirmation-modal-btn" class="dialog-close-btn" aria-label="Cerrar confirmación">✕</button>
+    </div>
+    <div class="dialog-body" id="confirmation-modal-content">
+      <!-- Se inyecta dinámicamente con app.js -->
+    </div>
+  </dialog>
+
+  <!-- BANNER DE CONSENTIMIENTO DE COOKIES Y ESTADÍSTICAS -->
+  <aside id="cookie-consent-banner" class="demo-notice-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:#1A241C;color:#FFF9ED;padding:16px;border-top:2px solid var(--brand);box-shadow:var(--shadow-panel);" aria-label="Preferencias de privacidad y estadísticas">
+    <div class="container" style="display:flex;flex-direction:column;gap:12px;">
+      <div style="font-size:var(--text-sm);line-height:1.5;">
+        <strong>Privacidad y métricas:</strong> Utilizamos almacenamiento técnico necesario para conservar tus platillos seleccionados en este navegador. Las métricas agregadas de visita son opcionales y puedes aceptar o rechazarlas con la misma facilidad. El rechazo no impide hacer pedidos.
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button type="button" id="cookie-accept-btn" class="btn btn-primary btn-sm">Aceptar estadísticas</button>
+        <button type="button" id="cookie-reject-btn" class="btn btn-secondary btn-sm" style="color:#FFF9ED;border-color:#DED6C5;">Rechazar opcionales</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Live region para lectores de pantalla -->
+  <div id="live-cart-announcer" role="status" aria-live="polite"></div>
+
+  <!-- Scripts modulares -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
